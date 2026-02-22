@@ -1,0 +1,23 @@
+id: source-humans-second
+name: Human Sourcing
+trigger: conditional
+runtime: openclaw
+
+steps:
+  - id: build_queries
+    agent: query_builder
+
+  - id: search_humans
+    action: web_search
+
+  - id: research_profiles
+    agent: researcher
+
+  - id: evaluate_profiles
+    agent: evaluator
+
+  - id: build_options
+    action: generate_decision_pack
+
+  - id: wait_for_approval
+    action: approval_gate

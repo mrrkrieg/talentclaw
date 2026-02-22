@@ -1,0 +1,14 @@
+id: intake-and-roles
+name: Intake and Role Definition
+trigger: manual
+runtime: openclaw
+
+steps:
+  - id: build_context
+    agent: context
+
+  - id: generate_roles
+    agent: roles
+
+  - id: store_role_specs
+    action: persist_to_db

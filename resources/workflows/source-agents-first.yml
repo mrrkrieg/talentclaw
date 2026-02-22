@@ -1,0 +1,20 @@
+id: source-agents-first
+name: Agent Sourcing
+trigger: manual
+runtime: openclaw
+
+steps:
+  - id: build_queries
+    agent: query_builder
+
+  - id: search_agents
+    action: web_search
+
+  - id: research_candidates
+    agent: researcher
+
+  - id: evaluate_candidates
+    agent: evaluator
+
+  - id: decision_gate
+    agent: pm
